@@ -1,0 +1,11 @@
+global class LeaveTrackerEndDateBatchScheduler implements Schedulable {
+
+    global void execute(SchedulableContext sc) {
+        Database.executeBatch(new LeaveTrackerEndDateBatch(), 200);
+    }
+    }
+
+
+//Database.executeBatch(new LeaveTrackerEndDateBatch(), 200);
+
+//System.schedule('Leave Tracker Midnight Job','0 0 0 * * ?',new LeaveTrackerEndDateBatchScheduler());
